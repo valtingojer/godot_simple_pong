@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Godot Simple Pong", "Godot Simple Pong.csproj", "{72CEB918-73CB-4D76-8292-344986D8AEDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72CEB918-73CB-4D76-8292-344986D8AEDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72CEB918-73CB-4D76-8292-344986D8AEDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72CEB918-73CB-4D76-8292-344986D8AEDB}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{72CEB918-73CB-4D76-8292-344986D8AEDB}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{72CEB918-73CB-4D76-8292-344986D8AEDB}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{72CEB918-73CB-4D76-8292-344986D8AEDB}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
