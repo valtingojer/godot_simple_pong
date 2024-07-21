@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=3 uid="uid://dulhjiv5m4xk8"]
+
+[ext_resource type="Texture2D" uid="uid://7j38pf8wu3jy" path="res://assets/Court.png" id="1_bd2sx"]
+[ext_resource type="Texture2D" uid="uid://dlmm6xmu5jg48" path="res://assets/Ball.png" id="2_76htk"]
+[ext_resource type="Texture2D" uid="uid://5lnvxr5ivdla" path="res://assets/Paddle.png" id="3_a555y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rotu8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y85xe"]
+size = Vector2(30, 203)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m26hg"]
+size = Vector2(1280, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4td33"]
+size = Vector2(50, 720)
+
+[node name="Pong" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Court" type="Sprite2D" parent="."]
+texture = ExtResource("1_bd2sx")
+offset = Vector2(640, 360)
+
+[node name="Ball" type="Area2D" parent="."]
+position = Vector2(640, 360)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+texture = ExtResource("2_76htk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("RectangleShape2D_rotu8")
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2(80, 360)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_a555y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_y85xe")
+
+[node name="Enemy" type="Area2D" parent="."]
+position = Vector2(1200, 360)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("3_a555y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_y85xe")
+
+[node name="Walls" type="Area2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="Walls"]
+position = Vector2(640, -25)
+shape = SubResource("RectangleShape2D_m26hg")
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls"]
+position = Vector2(640, 745)
+shape = SubResource("RectangleShape2D_m26hg")
+
+[node name="Goals" type="Area2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="Goals"]
+position = Vector2(0, 360)
+shape = SubResource("RectangleShape2D_4td33")
+
+[node name="Right" type="CollisionShape2D" parent="Goals"]
+position = Vector2(1280, 360)
+shape = SubResource("RectangleShape2D_4td33")
+
+[node name="Score" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 640.0
+offset_right = 641.0
+offset_bottom = 1.0
+
+[node name="Player" type="Label" parent="Score"]
+layout_mode = 0
+offset_left = -70.0
+offset_right = -30.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="Enemy" type="Label" parent="Score"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 80.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="Pause Screen" type="RichTextLabel" parent="."]
+visible = false
+offset_top = 180.0
+offset_right = 1280.0
+offset_bottom = 540.0
+theme_override_font_sizes/normal_font_size = 200
+bbcode_enabled = true
+text = "[center][rainbow][wave amp=50 freq=3]PAUSED[/wave][/rainbow][/center]"
